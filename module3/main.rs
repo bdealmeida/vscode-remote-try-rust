@@ -16,7 +16,7 @@ fn main() {
     println!("{} -> {:?}\n\n", x, add3(x));
 
     let name = String::from("Tara");
-    let age = 65;
+    let age = 19;
     //let tara = Person{name, age};
     //println!("Name: {}\nAge: {}", tara.name, tara.age);
 
@@ -42,5 +42,5 @@ fn main() {
         name: read_name, 
         age: read_age
     };
-    println!("{} {}", tara.name, tara.age - 60);
+    println!("{} {}", tara.name, tara.age);
 }
