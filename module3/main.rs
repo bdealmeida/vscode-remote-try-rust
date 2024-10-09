@@ -29,17 +29,18 @@ fn main() {
     let mut buf = String::new();
 
     // Read in name
-    let mut _len = reader.read_line(&mut buf).unwrap();
-    buf.pop(); // read_line includes \n in buf
-    let read_name = buf.clone(); // Save name from buf
+    reader.read_line(&mut buf).unwrap();
+    let read_name = buf.trim().to_string(); // Save name from buf
     buf.clear(); // reset buf to empty string
 
     // Read in age
-    _len = reader.read_line(&mut buf).unwrap();
-    buf.pop();
-    let read_age = buf.parse::<u8>().unwrap();
+    reader.read_line(&mut buf).unwrap();
+    let read_age = buf.trim().parse().unwrap();
 
     // Create struct with read in values
-    let tara = Person{name: read_name, age: read_age};
+    let tara = Person{
+        name: read_name, 
+        age: read_age
+    };
     println!("{} {}", tara.name, tara.age - 60);
 }
